@@ -30,6 +30,11 @@ public class GenreService implements IGenreService {
     }
 
     @Override
+    public Optional<Genre> getGenreByName(String name) throws Exception {
+        return genreRepository.findByName(name);
+    }
+
+    @Override
     public boolean deleteGenreById(int id) {
         try{
             genreRepository.deleteById(id);
@@ -44,9 +49,4 @@ public class GenreService implements IGenreService {
         return genreRepository.findAll();
     }
 
-    //TODO
-    @Override
-    public List<Book> getBooksByGenre(int genreId) {
-        return List.of();
-    }
 }

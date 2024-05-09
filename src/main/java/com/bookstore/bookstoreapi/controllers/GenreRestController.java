@@ -25,7 +25,6 @@ public class GenreRestController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<GenreDTO> postGenre(@RequestBody GenreDTO genreDTO){
-
         return new ResponseEntity<>(
                 modelMapper.map(genreService.insertOrUpdate(modelMapper.map(genreDTO, Genre.class)), GenreDTO.class), HttpStatus.CREATED);
     }
@@ -70,7 +69,5 @@ public class GenreRestController {
                     .collect(Collectors.toList())
                 ,HttpStatus.OK);
     }
-
-    //TODO: public List<Book> getBooksByGenre(int genreId)
 
 }

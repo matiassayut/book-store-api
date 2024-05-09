@@ -12,10 +12,10 @@ public interface IGenreService {
 
     public Optional<Genre> getGenreById(int id) throws Exception;
 
+    public Optional<Genre> getGenreByName(String name) throws Exception;
+
     public boolean deleteGenreById(int id);
 
     public List<Genre> getAllGenres();
-
-    public List<Book> getBooksByGenre(int genreId);
 
 }
