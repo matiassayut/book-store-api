@@ -23,7 +23,7 @@ public class Book {
     @OneToMany(mappedBy = "book")
     private Set<UserBook> userBooks = new HashSet<>();
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "book_genre",
             joinColumns = @JoinColumn(name = "book_id"),
