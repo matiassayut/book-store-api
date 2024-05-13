@@ -15,7 +15,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping(path = "api/v1/genre")
+@RequestMapping(path = "api/v1/genres")
 public class GenreRestController {
 
     @Autowired

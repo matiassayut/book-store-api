@@ -19,7 +19,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping(path = "api/v1/userbook")
+@RequestMapping(path = "api/v1/userbooks")
 public class UserBookRestController {
 
     @Autowired
