@@ -11,19 +11,31 @@
  - Postman
 
 **Database Diagram**
+
 ![DataBase Diagram](src/main/resources/BD_Diagram.png)
 
+
 **Project Structure:**
+
 ├── src
+
 │   ├── main
+
 │   │   ├── java
+
 │   │   │   └── com.bookstore.bookstoreapi
-│   │   │       ├── controllers        // Contains REST controller classes
-│   │   │       ├── dtos              // Contains DTO classes for transferring data between layers of the application.
-│   │   │       ├── entities          // Contains entity classes representing database tables
-│   │   │       ├── repositories      // Contains Spring Data repositories for database access
-│   │   │       └── services          // Contains Interfaces for service classes
-│   │   │           └── implementation  // Contains service classes for business logic
+
+│   │   │       ├── controllers - **Contains REST controller classes** 
+
+│   │   │       ├── dtos - **Contains DTO classes for transferring data between layers of the application.**
+
+│   │   │       ├── entities - **Contains entity classes representing database tables**
+
+│   │   │       ├── repositories - **Contains Spring Data repositories for database access**
+
+│   │   │       └── services - **Contains Interfaces for service classes**
+
+│   │   │    │          └── implementation - **Contains service classes for business logic**
 
 **Endpoints:**
 Book Class:
@@ -62,12 +74,15 @@ UserBook Class:
 
 **Examples:**
 Get User books by ID:
+
 ![getUserBookByIdExample](src/main/resources/getUserBookByIdExample.png)
 
 Get Books by Genre ID:
+
 ![getBooksByGenreExample](src/main/resources/getBooksByGenreExample.png)
 
 Get Books By Author name:
+
 ![getBooksByAuthorNameExample](src/main/resources/getBooksByAuthorNameExample.png)
 
 **Additional Information:**
