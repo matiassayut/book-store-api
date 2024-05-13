@@ -20,4 +20,6 @@ public interface IBookService {
 
     public List<BookDTO> getAllBooksByGenreId(int id);
 
+    public List<BookDTO> getAllBooksByUserId(int id);
+
 }

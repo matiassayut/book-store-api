@@ -77,4 +77,18 @@ public class BookService implements IBookService {
         return bookDTOs;
     }
 
+    @Override
+    public List<BookDTO> getAllBooksByUserId(int id) {
+        List<Book> books = bookRepository.findByUserId(id);
+        List<BookDTO> bookDTOs = new ArrayList<>();
+
+        for (Book book : books) {
+            BookDTO bookDTO = modelMapper.map(book, BookDTO.class);
+            bookDTO.setGenreNames(book.getGenres().stream().map(Genre::getName).collect(Collectors.toSet()));
+            bookDTOs.add(bookDTO);
+        }
+
+        return bookDTOs;
+    }
+
 }
