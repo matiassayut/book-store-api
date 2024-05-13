@@ -15,15 +15,15 @@
 
 **Project Structure:**
 ├── src
-│ ├── main
-│ │ ├── java
-│ │ │ └── com.bookstore.bookstoreapi
-│ │ │ │├── controllers **Contains REST controller classes** 
-│ │ │ │├── dtos **Contains DTO classes for transferring data between layers of the application.**
-│ │ │ │├── entities **Contains entity classes representing database tables**
-│ │ │ │├── repositories **Contains Spring Data repositories for database access**
-│ │ │ │└── services **Contains Interfaces for service classes**
-│ │ │ ││└── implementation **Contains service classes for business logic**
+│   ├── main
+│   │   ├── java
+│   │   │   └── com.bookstore.bookstoreapi
+│   │   │       ├── controllers        // Contains REST controller classes
+│   │   │       ├── dtos              // Contains DTO classes for transferring data between layers of the application.
+│   │   │       ├── entities          // Contains entity classes representing database tables
+│   │   │       ├── repositories      // Contains Spring Data repositories for database access
+│   │   │       └── services          // Contains Interfaces for service classes
+│   │   │           └── implementation  // Contains service classes for business logic
 
 **Endpoints:**
 Book Class:
