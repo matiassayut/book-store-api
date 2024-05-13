@@ -16,4 +16,7 @@ public interface IBookRepository extends JpaRepository<Book, Integer> {
     @Query("SELECT b FROM Book b JOIN b.genres g WHERE g.id = :genreId")
     List<Book> findByGenreId(@Param("genreId") int genreId);
 
+    @Query("SELECT DISTINCT b FROM Book b JOIN b.userBooks ub JOIN ub.user u WHERE u.id = :userId")
+    List<Book> findByUserId(@Param("userId") int userId);
+
 }
