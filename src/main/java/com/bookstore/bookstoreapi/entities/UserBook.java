@@ -20,11 +20,11 @@ public class UserBook {
     private int id;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", updatable = false)
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "book_id")
+    @JoinColumn(name = "book_id", updatable = false)
     private Book book;
 
     @Min(value = 1, message = "El rating debe ser como mínimo 1")
@@ -32,6 +32,7 @@ public class UserBook {
     private int rating;
 
     @CreationTimestamp
+    @Column(nullable = false, updatable = false)
     private LocalDate creationDate;
 
     @UpdateTimestamp
