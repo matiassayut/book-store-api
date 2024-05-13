@@ -64,6 +64,7 @@ public class UserBookRestController {
                     userBook.get().getId(),
                     modelMapper.map(userBook.get().getUser(), UserDTO.class),
                     modelMapper.map(userBook.get().getBook(), BookDTO.class),
+                    userBook.get().getRating(),
                     userBook.get().getCreationDate(),
                     userBook.get().getUpdatedDate()
             );
