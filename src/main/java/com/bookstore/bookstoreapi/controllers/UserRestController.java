@@ -25,6 +25,9 @@ public class UserRestController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<UserDTO> postUser(@RequestBody UserDTO userDTO){
+        if (userDTO.getId() != 0){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
         return new ResponseEntity<>(
                 modelMapper.map(userService.insertOrUpdate(modelMapper.map(userDTO, User.class)), UserDTO.class), HttpStatus.CREATED);
     }

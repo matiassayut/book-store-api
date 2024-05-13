@@ -25,6 +25,9 @@ public class GenreRestController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<GenreDTO> postGenre(@RequestBody GenreDTO genreDTO){
+        if (genreDTO.getId() != 0){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
         return new ResponseEntity<>(
                 modelMapper.map(genreService.insertOrUpdate(modelMapper.map(genreDTO, Genre.class)), GenreDTO.class), HttpStatus.CREATED);
     }

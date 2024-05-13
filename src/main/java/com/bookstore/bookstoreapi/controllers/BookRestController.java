@@ -31,6 +31,9 @@ public class BookRestController {
     //Creation of Book, by JSON body of "title", "author" and "genreNames" (List, can be integer of Genre id or String of genre names)
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<BookDTO> postBook(@RequestBody BookDTO bookDTO) throws Exception {
+        if (bookDTO.getId() != 0){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
         Book book = modelMapper.map(bookDTO, Book.class);
         Set<Genre> genres = new HashSet<>();
         for (String genreName : bookDTO.getGenreNames()) {
