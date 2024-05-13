@@ -1,5 +1,6 @@
 package com.bookstore.bookstoreapi.services;
 
+import com.bookstore.bookstoreapi.dtos.UserDTO;
 import com.bookstore.bookstoreapi.entities.User;
 
 import java.util.List;
@@ -14,5 +15,7 @@ public interface IUserService {
     public boolean deleteUserById(int id);
 
     public List<User> getAllUsers();
+
+    public List<UserDTO> getAllUsersByBookId(int id);
 
 }

@@ -1,5 +1,6 @@
 package com.bookstore.bookstoreapi.services.implementation;
 
+import com.bookstore.bookstoreapi.dtos.UserDTO;
 import com.bookstore.bookstoreapi.entities.User;
 import com.bookstore.bookstoreapi.repositories.IUserRepository;
 import com.bookstore.bookstoreapi.services.IUserService;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class UserService implements IUserService {
@@ -41,6 +43,13 @@ public class UserService implements IUserService {
     @Override
     public List<User> getAllUsers() {
         return userRepository.findAll();
+    }
+
+    @Override
+    public List<UserDTO> getAllUsersByBookId(int id) {
+        return userRepository.findByBookId(id).stream()
+                .map(User -> modelMapper.map(User, UserDTO.class))
+                .collect(Collectors.toList());
     }
 
 }
