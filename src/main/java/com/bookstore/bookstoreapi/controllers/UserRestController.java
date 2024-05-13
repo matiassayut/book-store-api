@@ -78,4 +78,9 @@ public class UserRestController {
                 ,HttpStatus.OK);
     }
 
+    @GetMapping(value = "/{id}/books", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<UserDTO>> getAllUsersByBookId(@PathVariable(name = "id") int id){
+        return new ResponseEntity<>(userService.getAllUsersByBookId(id),HttpStatus.OK);
+    }
+
 }

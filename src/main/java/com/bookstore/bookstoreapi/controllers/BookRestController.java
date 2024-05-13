@@ -138,5 +138,10 @@ public class BookRestController {
         return new ResponseEntity<>(bookService.getAllBooksByGenreId(id),HttpStatus.OK);
     }
 
+    @GetMapping(value = "/{id}/users", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<BookDTO>> getAllBooksByUserId(@PathVariable(name = "id") int id) {
+        return new ResponseEntity<>(bookService.getAllBooksByUserId(id),HttpStatus.OK);
+    }
+
 
 }
